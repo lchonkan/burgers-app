@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
+import BurgerIngredientImg from './BurgerIngredientImg/BurgerIngredientImg';
 
 const burger = (props) => {
   //console.log('Object Keys', Object.keys(props.ingredients));
@@ -9,7 +10,7 @@ const burger = (props) => {
   let transformedIngredients = Object.keys(props.ingredients)
     .map((igKey) => {
       return [...Array(props.ingredients[igKey])].map((_, i) => {
-        return <BurgerIngredient key={igKey + i} type={igKey} />;
+        return <BurgerIngredientImg key={igKey + i} type={igKey} />;
       });
     })
     .reduce((arr, el) => {
@@ -24,9 +25,9 @@ const burger = (props) => {
 
   return (
     <div className={classes.Burger}>
-      <BurgerIngredient type='bread-top' />
+      <BurgerIngredientImg type='bread-top' />
       {transformedIngredients}
-      <BurgerIngredient type='bread-bottom' />
+      <BurgerIngredientImg type='bread-bottom' />
     </div>
   );
 };
