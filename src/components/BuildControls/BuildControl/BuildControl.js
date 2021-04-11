@@ -15,6 +15,7 @@ const buildControl = (props) => {
       <button className={classes.More} onClick={props.added}>
         More
       </button>
+      
     </div>
   );
 };
